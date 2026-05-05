@@ -80,3 +80,29 @@
 
     result/DrugBAN_BiLSTM/best_model_epoch_94.pth   ← default
     result/DrugBAN/best_model_epoch_90.pth           ← CNN baseline
+
+─────────────────────────────────────────────────────────────
+  Demo files are ready — examples/ folder
+
+  examples/
+  ├── drugs.txt          ← 5 drugs (caffeine, aspirin, ibuprofen, metformin, tamoxifen)
+  ├── proteins.fasta     ← 4 proteins (CDK2, ESR1, DHFR, A2AR)
+  ├── one_drug.txt       ← single drug (caffeine)
+  └── one_protein.txt    ← single protein (ESR1 estrogen receptor)
+
+  ---
+  Ready-to-run commands — copy and paste as-is
+
+  Demo 1 — 1 drug vs 4 proteins (Mode 1:N)
+  python predict_batch.py --ligands examples/one_drug.txt --receptors examples/proteins.fasta --output
+  examples/demo1_1drug_vs_4proteins.csv
+
+  Demo 2 — 5 drugs vs 1 protein (Mode N:1 — virtual screening)
+  python predict_batch.py --ligands examples/drugs.txt --receptors examples/one_protein.txt --output examples/demo2_5drugs_vs_ESR1.csv
+
+  Demo 3 — 5 drugs vs 4 proteins (Mode N:M — all 20 combinations)
+  python predict_batch.py --ligands examples/drugs.txt --receptors examples/proteins.fasta --output
+  examples/demo3_5drugs_vs_4proteins.csv
+
+  All three commands have been tested and confirmed working.
+  Results are saved as CSV files inside the examples/ folder — open directly in Excel.
