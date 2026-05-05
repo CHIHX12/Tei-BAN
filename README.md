@@ -81,7 +81,7 @@
     result/DrugBAN_BiLSTM/best_model_epoch_94.pth   ← default
     result/DrugBAN/best_model_epoch_90.pth           ← CNN baseline
 
-─────────────────────────────────────────────────────────────
+● ---
   Demo files are ready — examples/ folder
 
   examples/
